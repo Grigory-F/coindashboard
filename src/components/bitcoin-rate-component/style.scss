@@ -1,7 +1,14 @@
+@use "sass:map";
+
+@import "@/style/variables/default-variables";
+
 .bitcoin-rate {
   display: flex;
   flex-direction: column;
   min-height: 500px;
+  border-radius: 12px;
+  box-shadow: 0 20px 27px rgba(0, 0, 0, 0.05);
+  background-color: var(--base-block-bg, map.get($colors, "base-block-bg"));
   &__top {
     display: flex;
     justify-content: space-between;
@@ -28,13 +35,13 @@
 
     /* Handle */
     &::-webkit-scrollbar-thumb {
-        background: rgba(0, 0, 0, 0.4);
-        border-radius: 10px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
     }
 
     /* Handle on hover */
     &::-webkit-scrollbar-thumb:hover {
-        background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.5);
     }
   }
 

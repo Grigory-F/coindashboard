@@ -1,0 +1,8 @@
+@use "sass:map";
+@import "@/style/variables/dark-variables";
+
+.dark-theme {
+  @each $key, $value in $dark-colors {
+    --#{$key}: #{$value};
+  }
+}
