@@ -1,0 +1,63 @@
+.bitcoin-rate {
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__name-sign {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__main {
+    max-height: 250px;
+    height: 100%;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &__line-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+  }
+
+  &__info-name {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &__current-price {
+    font-size: 16px;
+  }
+
+  &__no-options {
+  }
+  &__loading {
+  }
+  &__controls {
+  }
+}
