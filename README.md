@@ -8,17 +8,17 @@
 
 1. Добавлена GSAP-анимация на изменение цены
 2. Добавлен обработчик для получение цен в реальном времени
-   ![coindashboard](image-dev-1.0.3.png)
+   ![coindashboard](docs/image-dev-1.0.3.png)
 
 ### dev-1.0.2
 
 1. Добавлена инициализхация scss и css переменных для двух тем
-   ![coindashboard](image-dev-1.0.2.png)
+   ![coindashboard](docs/image-dev-1.0.2.png)
 
 ### dev-1.0.1
 
 1. Добавлен обработчик для получения списка монет и первичная верстка
-   ![coindashboard](image-dev-1.0.1.png)
+   ![coindashboard](docs/image-dev-1.0.1.png)
 
 ### dev-1.0.0
 
