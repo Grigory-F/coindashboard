@@ -1,12 +1,15 @@
 @use "sass:map";
 
 @import "@/style/variables/default-variables";
+@import "@/style/functions/set-root-size";
+@import "@/style/mixins/set-font-sizes";
 
 .bitcoin-rate {
   display: flex;
   flex-direction: column;
   min-height: 500px;
   border-radius: 12px;
+  padding: 24px;
   box-shadow: 0 20px 27px rgba(0, 0, 0, 0.05);
   background-color: var(--base-block-bg, map.get($colors, "base-block-bg"));
   &__top {
@@ -16,8 +19,8 @@
   }
 
   &__name-sign {
-    font-size: 24px;
-    font-weight: 600;
+    @include set-font-sizes(24);
+    font-weight: 800;
   }
 
   &__main {
@@ -58,7 +61,16 @@
   }
 
   &__current-price {
-    font-size: 16px;
+    @include set-font-sizes(16);
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    transition: background-color .1s ;
+  }
+  &__current-price--process {
+    background-color: red;
   }
 
   &__no-options {

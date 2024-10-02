@@ -1,0 +1,4 @@
+@function set-root-size($size) {
+  $computedSize: $size / 16;
+  @return #{$computedSize}rem;
+}

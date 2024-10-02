@@ -1,0 +1,23 @@
+@import "@/style/functions/set-root-size";
+
+@mixin set-font-sizes($size) {
+  @if ($size >= 12) and ($size < 14) {
+    line-height: set-root-size(16);
+  }
+  @if ($size >= 14) and ($size < 18) {
+    line-height: set-root-size(20);
+  }
+  @if ($size >= 18) and ($size <= 24) {
+    line-height: set-root-size(28);
+  }
+  @if ($size > 24) and ($size <= 28) {
+    line-height: set-root-size(32);
+  }
+  @if ($size > 28) and ($size <= 32) {
+    line-height: set-root-size(36);
+  }
+  @if ($size > 32) and ($size <= 36) {
+    line-height: set-root-size(40);
+  }
+  font-size: set-root-size($size);
+}
