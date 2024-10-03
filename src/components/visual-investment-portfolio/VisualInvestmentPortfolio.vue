@@ -7,7 +7,13 @@
           Всего вложено: 1000$
         </div>
         <div class="visual-investment__input">
-          <BaseInput v-model="investmentModelInput" placeholder="$" label="Новое пополнение" type="number" :isWithHint="false" />
+          <BaseInput
+            v-model="investmentModelInput"
+            placeholder="$"
+            label="Новое пополнение"
+            type="number"
+            :isWithHint="false"
+          />
           <div class="visual-investment__button">Ввести</div>
         </div>
       </div>
@@ -18,7 +24,6 @@
 <script lang="ts" setup>
 import { BaseInput } from "@/ui/base-input";
 import { ref } from "vue";
-
 
 const investmentModelInput = ref();
 </script>
