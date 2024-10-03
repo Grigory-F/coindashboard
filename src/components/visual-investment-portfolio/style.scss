@@ -1,0 +1,16 @@
+@use "sass:map";
+
+@import "@/style/variables/default-variables";
+@import "@/style/functions/set-root-size";
+@import "@/style/mixins/set-font-sizes";
+
+.header {
+  padding: 12px;
+  box-shadow: 0 0 8px 2px #0000000d;
+  &__layout {
+  }
+  &__logo {
+  }
+  &__controls {
+  }
+}

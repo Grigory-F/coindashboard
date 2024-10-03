@@ -1,0 +1,153 @@
+@use "sass:map";
+
+@import "@/style/variables/default-variables";
+@import "@/style/functions/set-root-size";
+@import "@/style/mixins/set-font-sizes";
+
+.input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &__hint-message {
+    @include set-font-sizes(12);
+    color: var(--text-secondary, map.get($colors, "text-secondary"));
+    visibility: hidden;
+    margin-top: 4px;
+    min-height: 16px;
+    margin-bottom: 4px;
+  }
+  &--focused {
+  }
+  &--error {
+  }
+  &--disabled {
+  }
+  &__hint-message--show {
+    visibility: visible;
+  }
+
+  &__hint-message--error {
+    color: var(--text-negative, map.get($colors, "text-negative"));
+  }
+}
+
+.input-container {
+  $self: &;
+  position: relative;
+  background-color: rgba(128, 128, 128, 0.144);
+  border-radius: 8px;
+  border: 2px solid gray;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  transition: border 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  cursor: text;
+  &__left-slot {
+    display: flex;
+  }
+  &--focused {
+    border: 2px solid var(--neutral-50, map.get($colors, "neutral-50"));
+    background-color: var(--neutral-0, map.get($colors, "neutral-0"));
+    box-sizing: border-box;
+  }
+
+  &__input-wrapper {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: end;
+    height: 52px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  &__input-label {
+    @include set-font-sizes(14);
+    color: var(--text-secondary, map.get($colors, "text-secondary"));
+    transition: 0.2s ease-in-out;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+  }
+  &__input {
+    outline: none;
+    line-height: 20px;
+    background-color: transparent;
+    border: none;
+    @include set-font-sizes(16);
+    width: 100%;
+    padding: 0;
+    color: var(--text-primary, map.get($colors, "text-primary"));
+    margin-bottom: 6px;
+    opacity: 0;
+    transition: 0.25s ease-in-out;
+    appearance: textfield;
+    &::placeholder {
+      color: var(--text-tertiary, map.get($colors, "text-tertiary"));
+    }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &:-webkit-autofill {
+      -webkit-box-shadow: inset 0 0 0 50px
+        var(--neutral-10, map.get($colors, "neutral-10")) !important;
+      box-shadow: inset 0 0 0 50px
+        var(--neutral-10, map.get($colors, "neutral-10")) !important;
+    }
+    &:-webkit-autofill:focus {
+      -webkit-box-shadow: inset 0 0 0 50px
+        var(--neutral-0, map.get($colors, "neutral-0")) !important;
+      box-shadow: inset 0 0 0 50px
+        var(--neutral-0, map.get($colors, "neutral-0")) !important;
+    }
+  }
+  &--focused &__input-label,
+  &--with-value &__input-label {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-secondary, map.get($colors, "text-secondary"));
+    top: 6px;
+    transform: translateY(0);
+  }
+  &--focused &__input,
+  &--with-value &__input {
+    opacity: 1;
+  }
+
+  &--error {
+    border: 2px solid
+      var(--status-negative, map.get($colors, "status-negative"));
+  }
+  &--disabled &__input {
+    color: var(--text-tertiary, map.get($colors, "text-tertiary"));
+  }
+
+  &__left-slot {
+    padding-left: 10px;
+    padding-right: 2px;
+  }
+  &__right-slot {
+    padding-right: 10px;
+    padding-left: 2px;
+  }
+  &__right-slot,
+  &__left-slot {
+    display: flex;
+    gap: 4px;
+  }
+  &--small {
+    height: 48px;
+  }
+  &--small &__input-label {
+  }
+  &--focused {
+    #{$self}--small &__input-label {
+      top: 2px;
+      transform: translateY(0);
+    }
+  }
+}

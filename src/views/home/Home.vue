@@ -1,13 +1,14 @@
 <template>
   <div class="home-page">
-    <BitcoinRateComponent
-    />
+    <BitcoinRateComponent />
+    <VisualInvestmentPortfolio />
   </div>
 </template>
 
 
 <script lang="ts" setup>
 import { BitcoinRateComponent } from "@/components/bitcoin-rate-component";
+import { VisualInvestmentPortfolio } from "@/components/visual-investment-portfolio";
 </script>
 
 
