@@ -1,0 +1,8 @@
+@use "sass:map";
+@import "./default-variables";
+
+:root {
+  @each $key, $value in $colors {
+    --#{$key}: #{$value};
+  }
+}

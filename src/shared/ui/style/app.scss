@@ -1,0 +1,19 @@
+@use "sass:map";
+
+@import "@/shared/ui/style/variables/default-variables";
+@import "@/shared/ui/style/functions/set-root-size";
+
+* {
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--body-bg, map.get($colors, "body-bg"));
+  font-size: set-root-size(16);
+}
+
+@import "./variables/init-dark-variables.scss";
+@import "./variables/init-default-variables.scss";
